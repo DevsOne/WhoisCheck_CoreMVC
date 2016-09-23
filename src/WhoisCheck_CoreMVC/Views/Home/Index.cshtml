@@ -1,0 +1,21 @@
+﻿@model WhoisCheck_CoreMVC.Models.DomainViewModels
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<form asp-action="CheckDomain" asp-controller="Home" method="post" class="form-horizontal dff-form">
+    <div class="form-group dff-group">
+        <label asp-for="DomainName" class="control-label dff-label"></label>
+        <div class="dff-inputwrap">
+            <input type="text" asp-for="DomainName" class="form-control dff-input" />
+        </div>
+        <input type="submit" class="btn btn-default dff-submit" value="&#128270;" />
+    </div>
+</form>
+
+<hr />
+@if (Model != null)
+{
+    @Html.Raw(Model.DomainDetails);
+}
